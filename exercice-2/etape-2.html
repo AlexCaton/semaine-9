@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>semaine-9</title>
+	</head>
+	<body>
+
+		<h3>Exercice n°2</h3>
+
+		<h2>Étape2: mettre le code dans une fonction</h2>
+
+		<ul id="liste"></ul>
+
+		<script type="text/javascript">
+
+			$liste = document.getElementById("liste");
+
+			monTableau = ["Emma", "Karim", "Mickael"];
+
+			function afficherListe() {
+				elements = "";
+				for (i = 0; i < monTableau.length; i++) {
+					elements += "<li>" + monTableau[i] + "</li>";
+				}
+				$liste.innerHTML = elements;
+			}
+			afficherListe();
+
+		</script>
+
+	</body>
+</html>

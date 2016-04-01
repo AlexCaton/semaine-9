@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>semaine-9</title>
+	</head>
+	<body>
+
+		<h3>Exercice n°2</h3>
+
+		<h2>Étape3: ajout d'un element</h2>
+
+		<input id="texte">
+		<button id=annuler>Annuler</button>
+		<button id=ajouter>Ajouter</button>
+
+		<ul id="liste"></ul>
+
+		<script type="text/javascript">
+
+			$liste = document.getElementById("liste");
+			$texte = document.getElementById("texte");
+			$annuler = document.getElementById("annuler");
+			$ajouter = document.getElementById("ajouter");
+
+			monTableau = ["Emma", "Karim", "Mickael"];
+
+			function afficherListe() {
+				elements = "";
+				for (i = 0; i < monTableau.length; i++) {
+					elements += "<li>" + monTableau[i] + "</li>";
+				}
+				$liste.innerHTML = elements;
+			}
+
+			function ajouter(){
+				monTableau.push($texte.value);
+				afficherListe();
+			}
+
+			function annuler(){
+				monTableau.pop();
+				afficherListe();
+			}
+
+			$annuler.onclick = annuler;
+			$ajouter.onclick = ajouter;
+			afficherListe();
+
+		</script>
+
+	</body>
+</html>

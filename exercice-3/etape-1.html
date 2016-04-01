@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>semaine-9</title>
+	</head>
+	<body>
+<!-- mémmento :
+		$element = document.getElementById("id-de-l-element-html");
+		// ajouter la classe "nom"
+		$element.classList.add("nom");
+		// retirer la classe "nom"
+		$element.classList.remove("nom");
+		// permuter de classe
+		$element.classList.toggle("nom");
+		// test la présence de la classe "nom"
+		$element.classList.contains("nom");
+-->
+		
+		<h3>Exercice n°3</h3>
+		
+		<ul id="liste">
+			<li>Un</li>
+			<li>Deux</li>
+			<li>Trois</li>
+			<li>Quatre</li>
+		</ul>
+		
+		<button id="suppression">Supprimer les selectionnés</button>
+		<button id="restauration">Par default</button>
+		
+		<script type="text/javascript">
+			
+			$liste = document.getElementById("liste");
+			$suppression = document.getElementById("suppression");			
+			$restauration = document.getElementById("restauration");
+			
+			function selectionne(e) {
+				// e.target correspond au <li> qui a été cliqué dans le <ul> !
+				e.target.classList.toggle("selected");
+			}
+			
+			function suppression() {
+    		for (i = 0; i < $liste.children.length; i++) {
+        	if ($liste.children[i].classList.contains("selected")) {
+            $liste.children[i].classList.add("supprimer");
+        	}
+				}
+			}
+			
+			function restauration() {
+				for (i = 0; i < $liste.children.length; i++) {
+        	$liste.children[i].classList.remove("supprimer");
+    		}
+			}
+			
+			$liste.onclick = selectionne;
+			$suppression.onclick = suppression;
+			$restauration.onclick = restauration;
+			
+		</script>
+		
+	</body>
+</html>
